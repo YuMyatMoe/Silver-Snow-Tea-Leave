@@ -65,7 +65,7 @@ let actionKeyboard = {
 
 // Creating the bot with access token, name and avatar
 const bot = new ViberBot({
-    authToken: process.env.4bd447e4e727de04-6567a83bac6ad204-2261af4f606f4dae,// <--- Paste your token here
+    authToken: process.env.AUTH_TOKEN,// <--- Paste your token here
     name: "Silver Snow Tea Leave",  // <--- Your bot name here
     avatar: "http://api.adorable.io/avatar/200/isitup" // It is recommended to be 720x720, and no more than 100kb.
 });
