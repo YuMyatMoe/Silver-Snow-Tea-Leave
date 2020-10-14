@@ -557,7 +557,7 @@ bot.onTextMessage(/./, (message, response) => {
             keyboardReply(message, response);
             break;
         case "appointment":
-            console.log("Yu Appointment is working")
+            console.log("Yu Appointment is working well")
             break;           
         case "who am i":
             whoAmI(message, response);
