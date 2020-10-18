@@ -115,9 +115,10 @@ app.post("/appointment", async function(req, res) {
             date: req.body.date,
             time: req.body.time
         })
-        res.render("appointment.ejs",  {
-            user_id: currentUser.id, message: "success"
-        })
+       
+    });
+    res.render("appointment.ejs",  {
+        user_id: currentUser.id, message: "success"
     })
    
    }catch(e){
