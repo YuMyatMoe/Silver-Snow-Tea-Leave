@@ -97,7 +97,10 @@ app.get('/appointment', function(req,res) {
         user_id: currentUser.id,
         user_name: currentUser.name
     }
-    res.render("appointment.ejs", data);
+    consolelog(`current id ${currentUser.id}`)
+    res.render("appointment.ejs", {
+        user_id: currentUser.id
+    });
 })
 
 app.post("/appointment", function(req, res) {
