@@ -111,7 +111,7 @@ app.post("/appointment", async function(req, res) {
 
     snapshot.forEach(async doc => {
         // console.log(doc.id, " => ", doc.data());
-        await db.collection(`users/${doc.id}`).add({
+        await db.collection(`users/`).doc(doc.id).collection('appointments').doc().set({
             date: req.body.date,
             time: req.body.time
         })
