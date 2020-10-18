@@ -109,7 +109,7 @@ app.post("/appointment", async function(req, res) {
     const userRef = db.collection('users');    
     const snapshot = await userRef.where('viberid', '==', currentUser.id).limit(1).get();
 
-    snapshot.forEach(doc => {
+    snapshot.forEach(async doc => {
         // console.log(doc.id, " => ", doc.data());
         await db.collection(`users/${doc.id}`).add({
             date: req.body.date,
@@ -117,7 +117,9 @@ app.post("/appointment", async function(req, res) {
         })
        
     });
-   
+    res.render("appointment.ejs",  {
+        user_id: currentUser.id, message: "success"
+    })
    
    }catch(e){
        console.log(e);
