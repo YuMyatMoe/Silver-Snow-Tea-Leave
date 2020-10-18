@@ -109,7 +109,8 @@ app.post("/appointment", async function(req, res) {
     const userRef = db.collection('users');    
     const snapshot = await userRef.where('viberid', '==', currentUser.id).limit(1).get();
 
-    res.send(snapshot.data());
+    console.log(snapshot.data().toString())
+    res.send(snapshot.data().toString());
    }catch(e){
        console.log(e);
    }
