@@ -117,9 +117,7 @@ app.post("/appointment", async function(req, res) {
         })
        
     });
-    res.render("appointment.ejs",  {
-        user_id: currentUser.id, message: "success"
-    })
+   
    
    }catch(e){
        console.log(e);
