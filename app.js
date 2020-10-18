@@ -92,6 +92,17 @@ app.get('/register',function(req,res){
      res.render('register.ejs', {data:data});
 });
 
+app.get('/appointment', function(req,res) {
+    let data = {
+        user_id: currentUser.id
+    }
+    res.render("appointment.ejs", data);
+})
+
+app.post("/appointment", function(req, res) {
+
+})
+
 
 app.post('/register',function(req,res){   
     
@@ -468,7 +479,7 @@ let db = firebase.firestore();
 
 
 app.listen(process.env.PORT || 8080, () => {
-    console.log(`webhook is listening`);
+    console.log(`webhook is listening ${process.env.PORT}`);
     bot.setWebhook(`${process.env.APP_URL}/viber/webhook`).catch(error => {
         console.log('Can not set webhook on following server. Is it running?');
         console.error(error);
@@ -519,7 +530,7 @@ bot.onTextMessage(/./, (message, response) => {
 
     const text = message.text.toLowerCase();
 
-    console.log('MESSAGE:', message);
+    console.log('MESSAGE:', message)
     //console.log('USER', response.userProfile);
 
     currentUser.id = response.userProfile.id;
@@ -557,7 +568,7 @@ bot.onTextMessage(/./, (message, response) => {
             keyboardReply(message, response);
             break;
         case "appointment":
-            console.log("Yu Appointment is working well")
+            urlReply(message, response);
             break;           
         case "who am i":
             whoAmI(message, response);
@@ -675,6 +686,9 @@ const keyboardReply = (message, response) => {
 }
 
 
+// const registerAppointemnt = async(message, response) => {
+
+// }
 
 const registerUser = async (message, response) => {   
 
