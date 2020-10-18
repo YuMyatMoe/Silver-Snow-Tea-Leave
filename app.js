@@ -99,7 +99,7 @@ app.get('/appointment', function(req,res) {
     }
     console.log(`current id ${currentUser.id}`)
     res.render("appointment.ejs", {
-        user_id: currentUser.id
+        user_id: currentUser.id, message: ""
     });
 })
 
@@ -107,12 +107,9 @@ app.post("/appointment", async function(req, res) {
    
    try{
     const userRef = db.collection('users');    
-    const snapshot = await userRef.add({
-        date: req.body.date,
-        time: req.body.time,
-    }).where('viberid', '==', req.body.id);
-    
-    console.log("success");
+    const snapshot = await userRef.where('viberid', '==', currentUser.id).limit(1).get();
+
+    res.send(snapshot.data());
    }catch(e){
        console.log(e);
    }
