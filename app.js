@@ -94,12 +94,14 @@ app.get('/register',function(req,res){
 
 app.get('/appointment', function(req,res) {
     let data = {
-        user_id: currentUser.id
+        user_id: currentUser.id,
+        user_name: currentUser.name
     }
     res.render("appointment.ejs", data);
 })
 
 app.post("/appointment", function(req, res) {
+    res.send(req.body);
 
 })
 
@@ -568,8 +570,7 @@ bot.onTextMessage(/./, (message, response) => {
             keyboardReply(message, response);
             break;
         case "appointment":
-            let bot_message = new UrlMessage(process.env.APP_URL + '/appointment/');   
-            response.send(bot_message);
+            registerAppointment(message, response);
             break;           
         case "who am i":
             whoAmI(message, response);
@@ -687,9 +688,22 @@ const keyboardReply = (message, response) => {
 }
 
 
-// const registerAppointemnt = async(message, response) => {
+const registerAppointment = async(message, response) => {
+    const userRef = db.collection('users');    
+    const snapshot = await userRef.where('viberid', '==', currentUser.id).limit(1).get();
 
-// }
+    if (snapshot.empty) {
+        console.log('No such document!');
+        let bot_message1 = new TextMessage(`Click on following link to register`, ); 
+        let bot_message2 = new UrlMessage(APP_URL + '/register/');   
+        response.send(bot_message1).then(()=>{
+            return response.send(bot_message2);
+        });
+    } else {
+        let bot_message = new UrlMessage(process.env.APP_URL + '/appointment/');   
+        response.send(bot_message);
+    }
+}
 
 const registerUser = async (message, response) => {   
 

@@ -8,11 +8,12 @@
 <body>
     <h2>Appointment Form</h2> 
     <form action="/appointment" method="post">
-        <label for="birthday">Birthday:</label>
-        <input type="date" id="birthday" name="birthday">
+        <label for="birthday">Date:</label>
+        <input type="date" id="birthday" name="date">
         <br>
-        <label for="birthday">Birthday:</label>
+        <label for="birthday">Time:</label>
         <input type="text" id="time" name="time">
+        <input type="text" value="<%= data.id%>" name="id"/>
         <input type="submit">
       </form>
 
