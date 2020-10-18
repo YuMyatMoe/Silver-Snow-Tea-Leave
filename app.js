@@ -568,7 +568,8 @@ bot.onTextMessage(/./, (message, response) => {
             keyboardReply(message, response);
             break;
         case "appointment":
-            urlReply(message, response);
+            let bot_message = new UrlMessage(process.env.APP_URL + '/appointment/');   
+            response.send(bot_message);
             break;           
         case "who am i":
             whoAmI(message, response);
