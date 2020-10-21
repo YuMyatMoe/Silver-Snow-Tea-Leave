@@ -36,7 +36,7 @@ let actionKeyboard = {
                 "BgMedia": "http://www.url.by/test.gif",
                 "BgLoop": true,
                 "ActionType": "reply",
-                "ActionBody": "reply",               
+                "ActionBody": "my-stock",               
                 "Text": "My Stock",
                 "TextVAlign": "middle",
                 "TextHAlign": "center",
