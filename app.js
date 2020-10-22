@@ -536,7 +536,7 @@ let KEYBOARD_JSON = {
         }]
     };
 
-const message = new TextMessage("Welcome To the Silver Snow Tea Leave Shop",KEYBOARD_JSON,null,null,null,3);
+const message = new TextMessage("Welcome To the tea shop",KEYBOARD_JSON,null,null,null,3);
 
 bot.onConversationStarted((userProfile, isSubscribed, context) =>     
     bot.sendMessage(userProfile,message)
