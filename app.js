@@ -92,6 +92,8 @@ app.get('/register',function(req,res){
      res.render('register.ejs', {data:data});
 });
 
+
+
 app.get('/appointment/', function(req,res) {
     let data = {
         user_id: currentUser.id,
@@ -174,6 +176,31 @@ app.post('/register',function(req,res){
     });
        
 });
+
+
+app.get('/admin/appointments', async(req, res) => {
+    const appointmentRef = db.collection('appointments');
+    const snapshot = await appointmentRef.get();
+
+    if (snapshot.empty) {
+        console.log('No matching documents.');
+        return;
+      }  
+      let data = [];
+      snapshot.forEach(doc => {
+  
+          let appointment = {};
+          appointment.id = doc.id;
+          appointment.name = doc.data().name;
+          appointment.date = doc.data().date;
+          appointment.time = doc.data().time;         
+          appointment.comment = doc.data().comment;
+          data.push(appointment);        
+      });   
+   
+      res.render('view_appointment.ejs', {data:data}); 
+
+})
 
 app.get('/admin/merchants', async (req,res) => {
     const usersRef = db.collection('users');
