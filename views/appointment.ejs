@@ -17,12 +17,12 @@
         <label for="birthday">Time:</label>
         <input type="text" id="time" name="time">
         <input type="text" value="<%= user_id%>" name="id" hidden/>
-        <p style="color: greenyellow;"><%=message %></p>
+     
        
         <br>
     
         <textarea placeholder="Comment"></textarea>
-        <p><%= message ? message : "" %></p>
+        <p style="color: greenyellow;"><%= message ? message : "" %></p>
         <input type="submit">
       </form>
 
