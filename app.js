@@ -197,6 +197,7 @@ app.get('/admin/appointments', async(req, res) => {
           appointment.comment = doc.data().comment;
           data.push(appointment);        
       });   
+      console.log(data);
    
       res.render('view_appointment.ejs', {data:data}); 
 
