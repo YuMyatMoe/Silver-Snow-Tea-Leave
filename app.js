@@ -195,6 +195,7 @@ app.get('/admin/appointments', async(req, res) => {
           appointment.date = doc.data().date;
           appointment.time = doc.data().time;         
           appointment.comment = doc.data().comment;
+          appointment.confirmed = doc.data().confirmed
           data.push(appointment);        
       });   
       console.log(data);

@@ -28,9 +28,13 @@
        <td><%= appointment.name %></td>
        <td><%= appointment.date %></td>
        <td><%= appointment.time %></td>
-       <td><%= appointment.comment %></td>
+       <td><%= appointment.comment %></td> 
+       <td><%= appointment.confirmed ? "yes" : "no" %></td> 
      
-       <td><a href="../admin/addstock/<%= appointment.id %>">Confirm </td>
+      <% if(!appointment.confirmed) { %> 
+        <td><a href="../admin/addstock/<%= appointment.id %>">Confirm </td>
+    
+    <%} %>
        <td><a href="../admin/payment/<%= appointment.id %>">Delete</a></td>
      </tr>
   <% }); %>
