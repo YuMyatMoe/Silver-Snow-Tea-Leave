@@ -117,7 +117,7 @@ app.post("/appointment", async function(req, res) {
     }
    
     
-    appointmentRef.add(req.body).then(docRef => {
+    appointmentRef.add({...req.body, confirmed: false}).then(docRef => {
         // console.log("Document written with ID: ", docRef.id)
         console.log(`current id ${currentUser.id}`)
         res.render("appointment.ejs", {
