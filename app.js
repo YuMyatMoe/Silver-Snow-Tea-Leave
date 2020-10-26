@@ -92,37 +92,37 @@ app.get('/register',function(req,res){
      res.render('register.ejs', {data:data});
 });
 
-app.get('/appointment/:name', function(req,res) {
+app.get('/appointment/', function(req,res) {
     let data = {
         user_id: currentUser.id,
         user_name: currentUser.name
     }
     console.log(`current id ${currentUser.id}`)
     res.render("appointment.ejs", {
-        user_name: req.params.name,
-        user_id: currentUser.id, message: ""
+        user_name: data.user_name,
+        user_id: currentUser.id, message: "",
+        message: ""
     });
 })
 
 app.post("/appointment", async function(req, res) {
    
    try{
-    const userRef = db.collection('users');    
-    const snapshot = await userRef.where('viberid', '==', currentUser.id).limit(1).get();
-
-    snapshot.forEach(async doc => {
-        // console.log(doc.id, " => ", doc.data());
-        await db.collection(`users/`).doc(doc.id).collection('appointments').add({
-            date: req.body.date,
-            time: req.body.time
-        })
-
-        
-  
-       
-    });
-    res.render("appointment.ejs",  {
-        user_id: currentUser.id, message: "success"
+    const appointmentRef = db.collection('appointments');    
+    let data = {
+        user_id: currentUser.id,
+        user_name: currentUser.name
+    }
+   
+    
+    appointmentRef.add(req.body).then(docRef => {
+        // console.log("Document written with ID: ", docRef.id)
+        console.log(`current id ${currentUser.id}`)
+        res.render("appointment.ejs", {
+            user_name: data.user_name,
+            user_id: currentUser.id, message: "",
+            message: "Success"
+        });
     })
    
    }catch(e){
@@ -726,7 +726,7 @@ const registerAppointment = async(message, response) => {
             return response.send(bot_message2);
         });
     } else {
-        let bot_message = new UrlMessage(process.env.APP_URL + `/appointment/${currentUser.name}`);   
+        let bot_message = new UrlMessage(process.env.APP_URL + `/appointment/`);   
         response.send(bot_message);
     }
 }

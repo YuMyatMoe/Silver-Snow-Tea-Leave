@@ -18,10 +18,12 @@
         <input type="text" id="time" name="time">
         <input type="text" value="<%= user_id%>" name="id" hidden/>
         <p style="color: greenyellow;"><%=message %></p>
-        <input type="submit">
+       
         <br>
     
         <textarea placeholder="Comment"></textarea>
+        <p><%= message ? message : "" %></p>
+        <input type="submit">
       </form>
 
 </body>
