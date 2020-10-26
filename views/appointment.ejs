@@ -8,6 +8,9 @@
 <body>
     <h2>Appointment Form</h2> 
     <form action="/appointment" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" value=<%= user_name %> />
+        <br>
         <label for="birthday">Date:</label>
         <input type="date" id="birthday" name="date">
         <br>
@@ -16,6 +19,9 @@
         <input type="text" value="<%= user_id%>" name="id" hidden/>
         <p style="color: greenyellow;"><%=message %></p>
         <input type="submit">
+        <br>
+    
+        <textarea placeholder="Comment"></textarea>
       </form>
 
 </body>

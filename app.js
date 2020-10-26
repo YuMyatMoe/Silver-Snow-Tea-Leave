@@ -92,13 +92,14 @@ app.get('/register',function(req,res){
      res.render('register.ejs', {data:data});
 });
 
-app.get('/appointment', function(req,res) {
+app.get('/appointment/:name', function(req,res) {
     let data = {
         user_id: currentUser.id,
         user_name: currentUser.name
     }
     console.log(`current id ${currentUser.id}`)
     res.render("appointment.ejs", {
+        user_name: req.params.name,
         user_id: currentUser.id, message: ""
     });
 })
@@ -536,7 +537,7 @@ let KEYBOARD_JSON = {
         }]
     };
 
-const message = new TextMessage("Welcome To the tea shop",KEYBOARD_JSON,null,null,null,3);
+const message = new TextMessage("Welcome To Silver Snow Tea Leave Shop",KEYBOARD_JSON,null,null,null,3);
 
 bot.onConversationStarted((userProfile, isSubscribed, context) =>     
     bot.sendMessage(userProfile,message)
@@ -725,7 +726,7 @@ const registerAppointment = async(message, response) => {
             return response.send(bot_message2);
         });
     } else {
-        let bot_message = new UrlMessage(process.env.APP_URL + '/appointment/');   
+        let bot_message = new UrlMessage(process.env.APP_URL + `/appointment/${currentUser.name}`);   
         response.send(bot_message);
     }
 }
