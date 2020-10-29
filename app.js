@@ -99,7 +99,7 @@ app.get('/appointment/', function(req,res) {
         user_id: currentUser.id,
         user_name: currentUser.name
     }
-    console.log(`current id ${currentUser.id}`)
+    console.log('APPOINTMENTDATA',data)
     res.render("appointment.ejs", {
         user_name: data.user_name,
         user_id: currentUser.id, message: "",
