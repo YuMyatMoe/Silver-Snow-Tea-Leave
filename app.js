@@ -748,13 +748,14 @@ const registerAppointment = async(message, response) => {
     const snapshot = await userRef.where('viberid', '==', currentUser.id).limit(1).get();
 
     if (snapshot.empty) {
-        console.log('No such document!');
+        console.log('registerAppointment empty');
         let bot_message1 = new TextMessage(`Click on following link to register`, ); 
         let bot_message2 = new UrlMessage(APP_URL + '/register/');   
         response.send(bot_message1).then(()=>{
             return response.send(bot_message2);
         });
     } else {
+        console.log('registerAppointment notempty');
         let bot_message = new UrlMessage(process.env.APP_URL + `/appointment/`);   
         response.send(bot_message);
     }
