@@ -26,7 +26,7 @@ input[type=tel], select {
 }
 
 input[type=submit] {
-  width: 25%;
+  width: 20%;
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -50,7 +50,7 @@ div {
 
   <body>
   
-  
+<div>
 	<form id="form" action="https://newsilver.herokuapp.com/register" method="post">
     <label for="name">Full Name</label><br>
     <input type="text" name="name" value="<%= data.user_name  %>"/><br>
@@ -64,7 +64,7 @@ div {
     <input type="submit" name="submit"/>
 
   </form>
-
+</div>
 
   <script>
     
