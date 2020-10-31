@@ -209,7 +209,7 @@ app.get('/admin/merchants', async (req,res) => {
     const snapshot = await usersRef.get();
     if (snapshot.empty) {
       console.log('No matching documents.');
-      return;
+      res.send ("No data");
     }  
     let data = [];
     snapshot.forEach(doc => {
