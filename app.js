@@ -749,8 +749,8 @@ const registerAppointment = async(message, response) => {
 
     if (snapshot.empty) {
         console.log('registerAppointment empty');
-        let bot_message1 = new TextMessage(`Click on following link to register`, ); 
-        let bot_message2 = new UrlMessage(APP_URL + '/register/');   
+        let bot_message1 = new TextMessage(`Click on following link to set the Appointment`, ); 
+        let bot_message2 = new UrlMessage(APP_URL + '/appointment/');   
         response.send(bot_message1).then(()=>{
             return response.send(bot_message2);
         });
