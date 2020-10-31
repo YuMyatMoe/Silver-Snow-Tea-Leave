@@ -92,15 +92,15 @@ div {
   <div>
     <form action="/appointment" method="post">
     
-        <label for="name">Name</label>
+        <label for="name">Name</label> <br>
         <input type="text" id="name" name="name" value="<%= user_name %>" />
         <br>
 
-        <label for="birthday">Date:</label>
+        <label for="birthday">Date:</label> <br>
         <input type="date" id="birthday" name="date">
         <br>
 
-        <label for="birthday">Time:</label>
+        <label for="birthday">Time:</label> <br>
         <!-- <input type="text" id="time" name="time"> -->
         <select name="time">
             <option value="9am">9am</option>
@@ -110,16 +110,17 @@ div {
             <option value="1pm">1pm</option>
             <option value="2pm">2pm</option>
             <option value="3pm">3pm</option>
-        </select>
-
-        <input type="text" value="<%= user_id%>" name="id" hidden/>
-        <br>
+        </select> <br>
 
         <label for="name">Comment</label><br>
         <textarea name="comment" rows="4" cols="50"></textarea><br>
         
         <p style="color: greenyellow;"><%= message ? message : "" %></p>
-        <input type="submit">
+
+        <input type="hidden" name="id" value="<%= user_id%>"/>
+
+        <input type="submit" name="submit"/>
+
       </form>
     </div> 
 
