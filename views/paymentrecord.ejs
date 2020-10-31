@@ -75,8 +75,11 @@ form {
 
 
   <form id="form" action="../../admin/savepayment" method="post">
-     amount: <input type="number" name="amount"/> <br>
-     date: <input type="date" name="date"/> <br>
+    <label for="name">Amount</label>
+    <input type="number" name="amount"/> <br>
+
+    <label for="name">Date</label>
+    <input type="date" name="date"/> <br>
      
      <input type="hidden" name="total_sale" value="<%= merchant.total_sale %>"/>
      <input type="hidden" name="merchant_id" value="<%= merchant.merchant_id %>"/>
