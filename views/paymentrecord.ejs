@@ -36,7 +36,7 @@ input[type=number], select {
 input[type=date], select {
   width: 30%;
   padding: 12px 20px;
-  margin: 12px 12px;
+  margin: 20px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -80,10 +80,10 @@ form {
 
 
   <form id="form" action="../../admin/savepayment" method="post">
-    <label for="name">Amount</label> <br>
+    <label for="name">Amount</label> 
     <input type="number" name="amount"/> <br>
 
-    <label for="name">Date</label> <br>
+    <label for="name">Date</label>
     <input type="date" name="date"/> <br>
      
      <input type="hidden" name="total_sale" value="<%= merchant.total_sale %>"/>
