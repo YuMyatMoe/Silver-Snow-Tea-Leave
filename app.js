@@ -314,7 +314,14 @@ app.get('/admin/stocklist/:merchant_id', async (req,res) => {
     
 });
 
+app.post('/admin/appointment', async(req, res) => {
+    try {
 
+        res.send({data: req.body})
+    }catch(e) {
+        console.log(e)
+    }
+})
 
 app.post('/admin/stocklist', async (req,res) => {     
     
