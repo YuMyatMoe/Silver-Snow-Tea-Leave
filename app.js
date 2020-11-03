@@ -218,7 +218,13 @@ app.post('/admin/appointments', async(req, res) => {
                 console.error("Error updating document: ", error);
             });
         } else if(req.body.status == "delete") {
-            
+            appointmentRef.delete()
+            .then(function() {
+                res.redirect("/admin/appointments")
+            }).catch(function(error) {
+                // The document probably doesn't exist.
+                console.error("Error updating document: ", error);
+            });
         }
        
     }catch(e) {
