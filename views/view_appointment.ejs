@@ -47,7 +47,13 @@
           </td>
     
     <%} %>
-       <td><a href="../admin/payment/<%= appointment.id %>">Cancel</a></td>
+    <td>
+      <form action="/admin/appointments" method="POST">
+        <input name ="id" value=<%= appointment.id %> hidden />
+        <input name ="status" value="delete" hidden />
+        <button type="submit">Delete</button>
+      </form>
+    </td>
      </tr>
   <% }); %>
 

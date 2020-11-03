@@ -204,6 +204,28 @@ app.get('/admin/appointments', async(req, res) => {
 
 })
 
+app.post('/admin/appointments', async(req, res) => {
+    try {
+        const appointmentRef = db.collection('appointments').doc(req.body.id);
+        if(req.body.status == "confirm") {
+            appointmentRef.update({
+                confirmed: true
+            }).then(function() {
+               res.redirect("/admin/appointments")
+            })
+            .catch(function(error) {
+                // The document probably doesn't exist.
+                console.error("Error updating document: ", error);
+            });
+        } else if(req.body.status == "delete") {
+            
+        }
+       
+    }catch(e) {
+        console.log(e)
+    }
+})
+
 app.get('/admin/merchants', async (req,res) => {
     const usersRef = db.collection('users');
     const snapshot = await usersRef.get();
@@ -314,14 +336,7 @@ app.get('/admin/stocklist/:merchant_id', async (req,res) => {
     
 });
 
-app.post('/admin/appointments', async(req, res) => {
-    try {
 
-        res.send({data: req.body})
-    }catch(e) {
-        console.log(e)
-    }
-})
 
 app.post('/admin/stocklist', async (req,res) => {     
     
