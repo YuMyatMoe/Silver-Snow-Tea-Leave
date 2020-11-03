@@ -38,7 +38,11 @@
      
       <% if(!appointment.confirmed) { %> 
         <!-- <td><a href="../admin/addstock/<%= appointment.id %>">Confirm </td> -->
-     
+          <form action="/" method="POST">
+            <input name ="id" value=<%= appointment.id %> />
+            <input name ="status" value="confirm" />
+            <button type="submit">Confirm</button>
+          </form>
     
     <%} %>
        <td><a href="../admin/payment/<%= appointment.id %>">Cancel</a></td>
