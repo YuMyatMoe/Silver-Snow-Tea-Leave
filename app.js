@@ -178,6 +178,52 @@ app.post('/register',function(req,res){
 });
 
 
+
+app.set('trust proxy', 1);
+app.use(session({secret: 'effystonem'}));
+
+
+
+app.get('/login',function(req,res){    
+    sess = req.session;
+
+    if(sess.login){
+       res.send('You are already login. <a href="logout">logout</a>');
+    }else{
+      res.render('login.ejs');
+    } 
+    
+});
+
+
+app.get('/logout',function(req,res){ 
+    //sess = req.session;   
+    req.session.destroy(null);  
+    res.redirect('login');
+});
+
+app.post('/login',function(req,res){    
+    sess = req.session;
+
+    let username = req.body.username;
+    let password = req.body.password;
+
+    if(username == 'admin' && password == 'test123'){
+      sess.username = 'admin';
+      sess.login = true;
+      res.send('login successful');
+    }else{
+      res.send('login failed');
+    }   
+});
+
+app.get('/publicpage',function(req,res){    
+    res.render('publicpage.ejs');
+});
+
+
+
+
 app.get('/admin/appointments', async(req, res) => {
     const appointmentRef = db.collection('appointments');
     const snapshot = await appointmentRef.get();
