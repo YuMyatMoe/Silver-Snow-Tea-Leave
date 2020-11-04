@@ -14,7 +14,7 @@ const TextMessage = require('viber-bot').Message.Text;
 const RichMediaMessage = require('viber-bot').Message.RichMedia;
 const KeyboardMessage = require('viber-bot').Message.Keyboard;
 const PictureMessage = require('viber-bot').Message.Picture;
-
+const session = require('express-session');
 const APP_URL = process.env.APP_URL;
 
 
@@ -179,6 +179,11 @@ app.post('/register',function(req,res){
 
 
 
+
+
+
+
+
 app.set('trust proxy', 1);
 app.use(session({secret: 'effystonem'}));
 
@@ -220,6 +225,7 @@ app.post('/login',function(req,res){
 app.get('/publicpage',function(req,res){    
     res.render('publicpage.ejs');
 });
+
 
 
 
