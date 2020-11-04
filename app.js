@@ -242,6 +242,8 @@ app.get('/privatepage',function(req,res){
 
 
 app.get('/admin/appointments', async(req, res) => {
+    sess = req.session;
+    if(sess.login){
     const appointmentRef = db.collection('appointments');
     const snapshot = await appointmentRef.get();
 
@@ -263,7 +265,12 @@ app.get('/admin/appointments', async(req, res) => {
       });   
       console.log(data);
    
-      res.render('view_appointment.ejs', {data:data}); 
+      res.render('view_appointment.ejs', {data:data});   
+    }
+    else{
+        res.send('You are not authorized to view this page');
+    }
+
 
 })
 
