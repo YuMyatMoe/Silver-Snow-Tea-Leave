@@ -123,7 +123,7 @@ app.post("/appointment", async function(req, res) {
         res.render("appointment.ejs", {
             user_name: data.user_name,
             user_id: currentUser.id, message: "",
-            message: "Success"
+            message: "Your Appointment is successful"
         });
     })
    
