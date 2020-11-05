@@ -14,16 +14,6 @@ h1 {
   text-align: center;
 }
 
-label[for="name"], select {
-  margin-left: 7%;
-  margin-right:7%;
-}
-
-label[for="password"], select {
-  margin-left: 7%;
-  margin-right:7%;
-}
-
 input[type=text], select {
   width: 15%;
   padding: 12px 10px;
@@ -67,7 +57,7 @@ form {
   margin-top: 120px;
   margin-left: 35%;
   margin-right:35%;
-  width: 100%;
+  
 }
 
 </style> 
@@ -81,13 +71,10 @@ form {
 
   <form id="form" action="login" method="post">
 
-  <label for="name">Username</label><br>  
-  <input type="text" name="username" placeholder="Enter Username" /><br> <br>
-
-  <label for="password">Password</label><br>
+  <input type="text" name="username" placeholder="Enter Username" /><br>
   <input type="password" name="password" placeholder="Enter Password" /><br> <br> <br>
-
   <input type="submit" name="Login" value="Login"/>
+
   </form> 
 
 </body>
