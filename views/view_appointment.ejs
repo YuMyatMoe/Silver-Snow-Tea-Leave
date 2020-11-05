@@ -100,20 +100,19 @@ button[type=submit]:hover {
               <button type="submit">Confirm</button>
 
             </form>
-          </td>
+          
         <%} %>
-        
-          <td>
+
+
             <form action="/admin/appointments" method="POST">
               <input name ="id" value="<%= appointment.id %>" hidden />
               <input name ="status" value="delete" hidden />
               <button type="submit">Delete</button>
             </form>
           </td>
-      </tr>
+    </tr>
     
     
-
 
   <% }); %>
 
