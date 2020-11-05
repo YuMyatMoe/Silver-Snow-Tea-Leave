@@ -78,7 +78,7 @@ button[type=submit]:hover {
     <th>Time</th>   
     <th>Comment</th>
     <th>Confirmed</th>
-    <th></th>
+    <th>Status</th>
   </tr>
 
   <% data.forEach(function(appointment){ %>
@@ -95,20 +95,19 @@ button[type=submit]:hover {
           <td>
             <form action="/admin/appointments" method="POST">
               <input name ="id" value="<%= appointment.id %>" hidden />
+
               <input name ="status" value="confirm" hidden />
               <button type="submit">Confirm</button>
+
+              <input name ="status" value="delete" hidden />
+              <button type="submit">Delete</button>
+              
             </form>
           </td>
     
     <%} %>
-    <td>
-      <form action="/admin/appointments" method="POST">
-        <input name ="id" value="<%= appointment.id %>" hidden />
-        <input name ="status" value="delete" hidden />
-        <button type="submit">Delete</button>
-      </form>
-    </td>
-     </tr>
+
+
   <% }); %>
 
 
