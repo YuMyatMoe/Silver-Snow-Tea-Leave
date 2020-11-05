@@ -303,8 +303,11 @@ app.post('/admin/appointments', async(req, res) => {
 })
 
 app.get('/admin/merchants', async (req,res) => {
+    sess = req.session;
+    if(sess.login){
     const usersRef = db.collection('users');
     const snapshot = await usersRef.get();
+
     if (snapshot.empty) {
       console.log('No matching documents.');
       res.send ("No data");
@@ -320,7 +323,14 @@ app.get('/admin/merchants', async (req,res) => {
         data.push(user);        
     });   
  
-    res.render('merchants.ejs', {data:data}); 
+    res.render('merchants.ejs', {data:data});
+
+    }
+
+    else{
+        res.send('You are not authorized to view this page');
+    }
+ 
     
 });
 
