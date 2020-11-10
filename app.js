@@ -666,7 +666,7 @@ let KEYBOARD_JSON = {
         "DefaultHeight": true,
         "Buttons": [{
             "Columns": 6,
-            "BgColor": "#2db9b9",
+            "BgColor": "#F4EF7B",
             "Rows": 1,
             "ActionType": "reply", // type of action
             "ActionBody": "register", // the value of the keyboard
@@ -891,7 +891,7 @@ const registerUser = async (message, response) => {
                 {
                     "Columns": 6,
                     "Rows": 1,
-                    "BgColor": "#9F93E2",
+                    "BgColor": "#F4EF7B",
                     "BgMediaType": "gif",
                     "BgMedia": "http://www.url.by/test.gif",
                     "BgLoop": true,
