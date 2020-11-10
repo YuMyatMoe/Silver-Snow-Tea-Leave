@@ -906,7 +906,7 @@ const registerUser = async (message, response) => {
                 {
                     "Columns": 6,
                     "Rows": 1,
-                    "BgColor": "#E29393",
+                    "BgColor": "#93E293",
                     "BgMediaType": "gif",
                     "BgMedia": "http://www.url.by/test.gif",
                     "BgLoop": true,
