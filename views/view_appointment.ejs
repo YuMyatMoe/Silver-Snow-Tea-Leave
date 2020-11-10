@@ -105,9 +105,10 @@ button[type=delete]:hover {
        <td><%= appointment.comment %></td> 
        <td><%= appointment.confirmed ? "yes" : "no" %></td> 
      
-      <% if(!appointment.confirmed) { %> 
+      
         <!-- <td><a href="../admin/addstock/<%= appointment.id %>">Confirm </td> -->
           <td>
+            <% if(!appointment.confirmed) { %> 
             <form action="/admin/appointments" method="POST">
               <input name ="id" value="<%= appointment.id %>" hidden />
 
