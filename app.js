@@ -666,6 +666,7 @@ let KEYBOARD_JSON = {
         "DefaultHeight": true,
         "Buttons": [{
             "Columns": 6,
+            "BgColor": "#2db9b9",
             "Rows": 1,
             "ActionType": "reply", // type of action
             "ActionBody": "register", // the value of the keyboard
