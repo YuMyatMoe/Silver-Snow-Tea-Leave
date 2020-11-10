@@ -113,14 +113,14 @@ button[type=delete]:hover {
 
               <input name ="status" value="confirm" hidden />
               <button type="submit">Confirm</button>
+            </form> <br>
           <%} %>
-          
+
+            <form action="/admin/appointments" method="POST">
               <input name ="id" value="<%= appointment.id %>" hidden />
               <input name ="status" value="delete" hidden />
               <button type="delete">Delete</button>
-
             </form>
-          
 
         </td>
           
