@@ -238,6 +238,15 @@ app.get('/privatepage',function(req,res){
 });
 
 
+app.get('/admin', (req, res) => {
+sess = req.session;
+    if(sess.login){
+        res.render('admin.ejs');
+    }
+    else{
+        res.send('You are not authorized to view this page');
+    }
+}); 
 
 
 
