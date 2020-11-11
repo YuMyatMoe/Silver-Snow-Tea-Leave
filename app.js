@@ -216,7 +216,7 @@ app.post('/login',function(req,res){
     if(username == 'admin' && password == process.env.ADMIN_PASSWORD){
       sess.username = 'admin';
       sess.login = true;
-      res.send('login successful');
+      res.redirect('admin');
     }else{
       res.send('login failed');
     }   
