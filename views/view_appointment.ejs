@@ -63,6 +63,7 @@ button[type=delete] {
   transition-duration: 0.4s;
   cursor: pointer;
   float: right;
+  margin: 0;
 }
 
 button[type=submit]:hover {
@@ -111,7 +112,6 @@ button[type=delete]:hover {
           <% if(!appointment.confirmed) { %> 
             <form action="/admin/appointments" method="POST">
               <input name ="id" value="<%= appointment.id %>" hidden />
-
               <input name ="status" value="confirm" hidden />
               <button type="submit">Confirm</button>
             </form>
