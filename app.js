@@ -901,8 +901,7 @@ const registerUser = async (message, response) => {
                     "Columns": 6,
                     "Rows": 1,
                     "BgColor": "#EE82EE",
-                    "BgMediaType": "gif",
-                    "BgMedia": "http://www.url.by/test.gif",
+
                     "BgLoop": true,
                     "ActionType": "reply",
                     "ActionBody": "my-stock",               
