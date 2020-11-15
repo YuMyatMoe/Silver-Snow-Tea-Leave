@@ -93,6 +93,7 @@ th, td {
     <th>Address</th>   
     <th>Manage Stock</th>
     <th>Payment</th>
+    <th>Sale</th>
   </tr>
 
   <% data.forEach(function(user){ %>
@@ -104,6 +105,7 @@ th, td {
      
        <td><a href="../admin/addstock/<%= user.id %>">Add Stock</a> | <a href="../admin/stocklist/<%= user.id %>">Stock List</a></td>
        <td><a href="../admin/payment/<%= user.id %>">Payment History</a></td>
+       <td><a href="../admin/salesrecord/<%= user.id %>">Sales Record</a></td>
      </tr>
   <% }); %>
 
