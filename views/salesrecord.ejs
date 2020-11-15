@@ -4,9 +4,57 @@
     <meta charset="UTF-8">
     <title>Sale Record</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
- </head>
 
-  <body>
+
+<style>
+
+body {
+    background-color: aquamarine;
+}
+
+h1 {
+  font-size: 45px;
+  color: midnightblue;
+  text-align: center;
+}
+
+p {
+  text-indent: 80px;
+  text-align: justify;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: purple;
+}     
+
+table {  
+  border: 3px solid;
+  border-color: black;
+  border-collapse: collapse;
+  width: 100%;
+ } 
+
+th {
+  text-align: center;
+  font-size: 20px;
+}
+
+td {
+  font-size: 18px;
+}
+
+th, td {
+  padding: 15px;
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
   <h1>Sale Record</h1>
 
   <p>
@@ -26,7 +74,7 @@
   </tr>
 
   <% data.forEach(function(sale){ %>
-     <tr>
+    <tr>
       
        <td><%= sale.id %></td>
        <td><%= sale.date %></td>
@@ -36,8 +84,7 @@
        <td><%= sale.amount %></td>      
        
      
-      
-     </tr>
+    </tr>
   <% }); %>
 
 
