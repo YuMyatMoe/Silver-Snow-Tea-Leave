@@ -44,6 +44,16 @@ input[type=date], select {
   box-sizing: border-box;
 }
 
+input[type=Price], select {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
 textarea[name=comment], select {
   width: 30%;
   padding: 12px 20px;
@@ -92,7 +102,7 @@ form {
     
 
     <label for="name">Batch No</label><br>
-    <input type="text" name="item_batch"/><br>
+    <input type="number" name="item_batch"/><br>
 
     <label for="name">Type</label><br>
     <input type="text" name="item_type"/><br>
@@ -101,7 +111,7 @@ form {
     <input type="number" name="item_qty"/><br>
 
     <label for="name">Unit Price</label><br>
-    <input type="text" name="item_price"/><br>    
+    <input type="Price" name="item_price"/><br>    
 
     <label for="name">Received Date</label><br>
     <input type="date" name="item_received_date"/><br> 
