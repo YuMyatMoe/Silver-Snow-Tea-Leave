@@ -31,7 +31,7 @@ let actionKeyboard = {
             {
                 "Columns": 6,
                 "Rows": 1,
-                "BgColor": "#2db9b9",
+                "BgColor": "#EE82EE",
                 "BgMediaType": "gif",
                 "BgMedia": "http://www.url.by/test.gif",
                 "BgLoop": true,
@@ -46,7 +46,7 @@ let actionKeyboard = {
             {
                 "Columns": 6,
                 "Rows": 1,
-                "BgColor": "#2db9b9",
+                "BgColor": "#93E293",
                 "BgMediaType": "gif",
                 "BgMedia": "http://www.url.by/test.gif",
                 "BgLoop": true,
@@ -901,7 +901,8 @@ const registerUser = async (message, response) => {
                     "Columns": 6,
                     "Rows": 1,
                     "BgColor": "#EE82EE",
-
+                    "BgMediaType": "gif",
+                    "BgMedia": "http://www.url.by/test.gif",
                     "BgLoop": true,
                     "ActionType": "reply",
                     "ActionBody": "my-stock",               
