@@ -8,6 +8,31 @@
 
 <style>
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #3CB371;
+}
+
+li {
+  font-size: 18px;
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #FFA500;
+}
+
 h1 {
   font-size: 45px;
   color: midnightblue;
@@ -93,6 +118,16 @@ form {
 
 
   <body>
+
+  <nav>
+    <ul>
+      <li><a href="https://newsilver.herokuapp.com/admin/merchants">Merchant Lists</a></li>
+      <li><a href="../admin/addstock/<%= user.id %>">Add Stock</a></li>
+      <li><a href="../admin/stocklist/<%= user.id %>">Stock Lists</a></li>
+      <li><a href="../admin/salesrecord/<%= user.id %>">Sale Record</a></li>
+    </ul>
+  </nav>
+
   <h1>Add Stock</h1>
   
 
