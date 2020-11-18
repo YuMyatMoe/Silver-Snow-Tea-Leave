@@ -161,6 +161,7 @@ app.post('/register',function(req,res){
                    "tracking_data":"tracking data",
                    "type":"text",
                    "text": "Thank you!"+req.body.name
+                   "text": "Your Registration is successful"
                 }                
 
                 fetch('https://chatapi.viber.com/pa/send_message', {
