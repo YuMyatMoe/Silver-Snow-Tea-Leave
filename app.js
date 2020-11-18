@@ -160,7 +160,7 @@ app.post('/register',function(req,res){
                    },
                    "tracking_data":"tracking data",
                    "type":"text",
-                   "text": "Thank you! Your Registration is successful." +req.body.name
+                   "text": "Thank you! Your Registration is Successful." +req.body.name
                 }                
 
                 fetch('https://chatapi.viber.com/pa/send_message', {
@@ -1018,7 +1018,7 @@ const checkBalance = async (message, response) => {
     const snapshot2 = await salesRef.get();
     if (snapshot2.empty) {
         total_sale = 0;
-        let bot_message = new TextMessage(`You have no sales`);    
+        let bot_message = new TextMessage(`Your products are not yet sale`);    
         response.send(bot_message);       
     } else{    
         snapshot2.forEach(doc => {   
