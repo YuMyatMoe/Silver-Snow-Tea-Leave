@@ -356,6 +356,7 @@ app.get('/admin/addstock/:merchant_id', async (req,res) => {
       data.merchant_id = user.id; 
       data.merchant_name = user.data().name;
     }
+    console.log("data", data);
     res.render('addstock.ejs', {data:data}); 
     
 });
