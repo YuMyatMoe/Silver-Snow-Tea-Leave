@@ -693,7 +693,7 @@ bot.onConversationStarted((userProfile, isSubscribed, context) =>
 
 
 bot.onTextMessage(/^hi|hello$/i, (message, response) =>
-    response.send(new TextMessage(`Hi there ${response.userProfile.name}. I am robot`)));
+    response.send(new TextMessage(`Hi there ${response.userProfile.name}. I am robot. How can I help you?`)));
 /*
 bot.onTextMessage(/^mingalarbar$/i, (message, response) =>
     response.send(new TextMessage(`Mingalarbar. Welcome to MCC`)));
